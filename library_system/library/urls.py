@@ -29,11 +29,11 @@ from .views import LibraryViewSet
 router = DefaultRouter()
 
 # Register the LibraryViewSet with the router
-# This creates URLs for all actions defined in the ViewSet
+
 router.register(r'library', LibraryViewSet, basename='library')
 
-# URL patterns for the library app
+# all routes
 urlpatterns = [
-    # Include all router-generated URLs under the 'api/' prefix
+    
     path('api/', include(router.urls)),
 ]
