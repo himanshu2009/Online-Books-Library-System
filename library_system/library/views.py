@@ -130,6 +130,7 @@ class LibraryViewSet(viewsets.ViewSet):
                 user.borrowed_magazines -= 1
 
             item.is_available = True
+            user.monthly_transactions += 1
             item.save()
             Transaction.objects.create(user=user, item=item, action="return")
 
